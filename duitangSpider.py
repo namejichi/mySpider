@@ -7,6 +7,7 @@ import os
 
 class duitangSpider:
         def __init__(self):
+                #kw根据自己的搜索内容变化
                 self.siteURL = 'http://www.duitang.com/search/?kw=%E5%A4%A9%E6%B6%AF%E6%98%8E%E6%9C%88ol&type=feed&include_fields=top_comments,is_root,source_link,item,buyable,root_id,status,like_count,sender,album&_type=&start='
         def getPage(self,pageIndex,i):
                 start = (pageIndex - 1) * 120 + i * 24
@@ -66,4 +67,5 @@ class duitangSpider:
                         print 'Downloading the',i,'th page'
                         self.savePageImg(i)
 spider = duitangSpider()
+#下载的页数范围根据自己的需要改变
 spider.savePagesImg(1,8)
